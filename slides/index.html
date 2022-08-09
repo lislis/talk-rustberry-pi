@@ -217,7 +217,7 @@
 
       class: middle
 
-      ## Building a circuit for the example!
+      ## Building a circuit for the blinking light!
 
       We need:
 
@@ -233,6 +233,92 @@
 
       background-image: url(assets/Raspberry-GPIO-Pins_B_plus.webp)
       background-size: contain
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for the blinking light!
+
+      - Connect 5V and GND on your breadboard
+
+      - Connect the long leg of the LED to GPIO 23 (physical pin 16)
+
+      - Connect the short leg to GND using the resistor
+
+      ---
+
+      class: middle sec
+
+      Run it!
+
+      ---
+
+      class: middle center sec
+
+      Step 2
+
+      ## Hello touchy World
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for the touch sensor
+
+      - Connect 5V and GND on your breadboard
+
+      - The touch sensor module has three pins
+
+        - Connect VCC and GND to your breadboard accordingly
+
+        - Connect Out to GPIO 24 (physical pin 18)
+
+      ---
+
+      class: middle sec
+
+      Look at the code and run it!
+
+      ---
+
+      class: middle center sec
+
+      Step 3
+
+      ## Hello moving World
+
+      ---
+
+      class: middle center
+
+      ## Servos and PWM
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for a servo motor
+
+      - Connect 5V and GND on your breadboard
+
+      - The servo motor has three pins
+
+        - Connect VCC (red) and GND (brown) to your breadboard accordingly <br> .small[(ideally motors are powered by a seperate power supply as they draw a lot of current. But we'll ignore that for now 🙃)]
+
+        - Connect the Pulse (orange) to GPIO 18 (physical pin 12) <br> .small[(and make sure that your Pi has [pwm enabled](https://docs.golemparts.com/rppal/0.12.0/rppal/pwm/index.html#pwm-channels))]
+
+      ---
+
+      class: middle sec
+
+      Look at the code and run it!
+
+      ---
+
+      class: middle center
+
+      ## Bring everything together!
 
       ---
 
@@ -255,7 +341,8 @@
       .no-bullets[
         - 📧 mail@lislis.de
         - 🦣 @lislis@toot.cat
-        - 🐙 [//github.com/lislis](https://github.com/lislis/)]
+        - 🌐 [//lislis.de/talks/rust-rostock-22](https://lislis.de/talks/rust-rostock-22)
+        - 🐙 [//github.com/lislis/talk-rustberry-pi](https://github.com/lislis/talk-rustberry-pi)]
 
 </textarea>
 

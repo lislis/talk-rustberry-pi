@@ -71,6 +71,10 @@ blockquote {
   font-size: 0.8rem;
 }
 
+.small {
+  font-size: 0.8rem;
+}
+
 .half {
   width: 50%;
 }

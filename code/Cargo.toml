@@ -1,0 +1,25 @@
+[package]
+name = "rustberry"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.59"
+rand = "0.8.5"
+rppal = "0.13.1"
+
+[[bin]]
+name = "blinky"
+path = "src/blinky.rs"
+
+[[bin]]
+name = "touch"
+path = "src/touch.rs"
+
+[[bin]]
+name = "servo"
+path = "src/servo.rs"
+
+[[bin]]
+name = "panzerknacker"
+path = "src/game.rs"

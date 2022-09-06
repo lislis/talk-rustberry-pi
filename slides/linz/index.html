@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Rustberry Pi - Baby steps in embedded Rust</title>
+        <link href="assets/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <textarea id="source">
+      class: center, middle
+
+      # .title[Rustberry Pi]
+
+      .subtitle[Baby steps in embedded Rust]
+
+      [lislis](https://lislis.de) at [Rust Linz](https://www.meetup.com/rust-linz/events/288048260/) September 2022
+
+      ---
+
+      class: middle
+
+      # $ whoami
+
+      ---
+
+      class: middle
+      background-image: url(assets/bubbles-crop.jpg)
+      background-size: 50%
+      background-position: 95% center
+
+      # $ whoami
+
+      Creative Technologist
+
+      ---
+
+      class: middle
+      background-image: url(assets/kyiv.png)
+      background-size: 50%
+      background-position: 95% center
+
+      # $ whoami
+
+      Creative Technologist
+
+      Around Rust since 2017
+
+      ---
+
+      class: middle
+      background-image: url(assets/rustinarts.png)
+      background-size: 50%
+      background-position: 95% center
+
+      # $ whoami
+
+      Creative Technologist
+
+      Around Rust since 2017
+
+      Organized [Rust in Arts](https://www.youtube.com/watch?v=hwaBaoAPOU0&list=PL85XCvVPmGQgF1UzXWnQHKtsPHmw6tEXx)<br> in November 2021
+
+      ---
+
+      class: center middle sec
+
+      # Embedded who dis?
+
+      ---
+
+      background-image: url(assets/embedded.png)
+      background-size: cover
+
+      ---
+
+      background-image: url(assets/embedded2.png)
+      background-size: cover
+
+      ---
+
+      class: middle
+
+      .subtle[Embedded] means
+
+      .subtle[limited processing power] and .subtle[memory]
+
+      on a .subtle[wide variety of devices].
+
+      ---
+
+      class: middle
+      background-image: url(assets/arduino.png)
+      background-size: 50%
+      background-position: 95% center
+
+      From microcontrollers
+
+      to single board computers
+
+      ---
+
+      class: middle
+      background-image: url(assets/stm32f3.png)
+      background-size: 50%
+      background-position: 95% center
+
+      From microcontrollers
+
+      to single board computers
+
+      ---
+
+      class: middle
+      background-image: url(assets/microbit.png)
+      background-size: 50%
+      background-position: 95% center
+
+      From microcontrollers
+
+      to single board computers
+
+      ---
+
+      class: middle
+      background-image: url(assets/rpi.png)
+      background-size: 50%
+      background-position: 95% center
+
+      From microcontrollers
+
+      to single board computers
+
+      ---
+
+      class: middle center
+
+      ## You need some kind of hardware
+
+      ---
+
+      class: middle center sec
+
+      ## Use what you have
+
+      ---
+
+      background-image: url(assets/rpi3.png)
+      background-size: 60%
+      background-position: center center
+
+      ---
+
+      class: middle
+
+      ## I have
+
+      - little experience in bare metal programming (like toying with Arduinos)
+
+      - no idea what I'm doing
+
+      - a rough idea of what I want
+
+      ---
+
+      class: middle center
+
+      What do I want?
+
+      ---
+
+      class: center middle
+
+      # Physical computing
+
+      --
+
+      Reading from and interacting with the physical world
+
+      ---
+
+      class: middle
+
+      ## Prep work
+
+      --
+
+      - Develop on device
+
+        - Flash Raspbian OS onto an SD card and boot your Raspy
+        - Use the GUI or ssh to install Rust (with rustup, just like you're used to)
+        - [Video tutorial on how to do these things](https://www.youtube.com/watch?v=MMzCfzCUNyo)
+
+      - or cross-compile
+        - add ARM target (`rustup target add armv7-unknown-linux-gnueabihf`)
+        - [Article on how to do that and set up a deployment script](https://medium.com/swlh/compiling-rust-for-raspberry-pi-arm-922b55dbb050)
+
+      ---
+
+      class: middle center sec
+
+      Step 1
+
+      ## Hello blinky World
+
+      ---
+
+      background-image: url(assets/rppal.png)
+      background-size: 80%
+      background-position: center center
+
+      ---
+
+      background-image: url(assets/rppal-example.png)
+      background-size: contain
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for the blinking light!
+
+      We need:
+
+      - Jumper cables
+
+      - LED
+
+      - Resistor (eg 330 Ohm)
+
+      - Breadboard
+
+      ---
+
+      background-image: url(assets/Raspberry-GPIO-Pins_B_plus.webp)
+      background-size: contain
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for the blinking light!
+
+      - Connect 5V and GND on your breadboard
+
+      - Connect the long leg of the LED to GPIO 23 (physical pin 16)
+
+      - Connect the short leg to GND using the resistor
+
+      ---
+
+      class: middle sec
+
+      Run it!
+
+      ---
+
+      class: middle center sec
+
+      Step 2
+
+      ## Hello touchy World
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for the touch sensor
+
+      - Connect 5V and GND on your breadboard
+
+      - The touch sensor module has three pins
+
+        - Connect VCC and GND to your breadboard accordingly
+
+        - Connect Out to GPIO 24 (physical pin 18)
+
+      ---
+
+      class: middle sec
+
+      Look at the code and run it!
+
+      ---
+
+      class: middle center sec
+
+      Step 3
+
+      ## Hello moving World
+
+      ---
+
+      class: middle center
+
+      ## Servos and PWM
+
+
+      ---
+
+      background-image: url(assets/pwm.png)
+      background-size: 60%
+
+      Pulse Width Modulation
+
+      ---
+
+      class: middle
+
+      ## Building a circuit for a servo motor
+
+      - Connect 5V and GND on your breadboard
+
+      - The servo motor has three pins
+
+        - Connect VCC (red) and GND (brown) to your breadboard accordingly <br> .small[(ideally motors are powered by a seperate power supply as they draw a lot of current. But we'll ignore that for now 🙃)]
+
+        - Connect the Pulse (orange) to GPIO 18 (physical pin 12) <br> .small[(and make sure that your Pi has [pwm enabled](https://docs.golemparts.com/rppal/0.12.0/rppal/pwm/index.html#pwm-channels))]
+
+      ---
+
+      class: middle sec
+
+      Look at the code and run it!
+
+      ---
+
+      class: middle center
+
+      ## Bring everything together!
+
+      ---
+
+      class: middle
+
+      Further reading/ watching!
+
+      - [[Video] From 0 to no_std in one session by Marco Amann](https://www.youtube.com/watch?v=Pu4MZmB0E28)
+
+      - [Embedded Rust documentation](https://docs.rust-embedded.org/)
+
+      - [The Discovery book](https://docs.rust-embedded.org/discovery/index.html)
+
+      ---
+
+
+      class: middle
+      ## Vielen Dank!
+
+      .no-bullets[
+        - 📧 mail@lislis.de
+        - 🦣 @lislis@toot.cat
+        - 🌐 [//lislis.de/talks/rust-linz-22](https://lislis.de/talks/rust-linz-22)
+        - 🐙 [//github.com/lislis/talk-rustberry-pi](https://github.com/lislis/talk-rustberry-pi)]
+
+</textarea>
+
+
+        <script src="assets/remark.min.js"></script>
+        <script>var slideshow = remark.create({
+             ratio: '16:9',
+             navigation: {
+                 scroll: false
+         }});
+        </script>
+    </body>
+</html>
